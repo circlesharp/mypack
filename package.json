@@ -1,0 +1,11 @@
+{
+  "name": "mypack",
+  "version": "1.0.0",
+  "description": "my rewrite webpack code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "circlesharp",
+  "license": "ISC"
+}
