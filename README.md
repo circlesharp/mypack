@@ -16,3 +16,17 @@
 1. 对于 /lib/Compiler.js, 构建时的主要实例属性有：`config, entry, entryId, root, modules`
 2. run: 构建模块 -> buildModule, 弹出文件 -> emitFile
 3. buildModule: 确定 entryId, modules
+
+## P36 AST递归解析
+1. babylon -> 将源码转换成 ast
+> ast: https://astexplorer.net/
+2. @babel/traverse -> 遍历节点
+> callExpression: 调用表达式，如 `a(), require()`
+3. @babel/types -> 替换
+> 有一个 `stringLiteral` 方法，提取 arguments, 让树对象变成字符串，放入数组
+4. @babel/generator -> 生成
+> `generator(ast).code`, 生成数组，code 字段就是代码
+5. parse 函数的作用: 
+> 1. 将 require 变成 __webpack_require__
+> 2. 改写依赖的路径，变成 ./src...
+> 3. 得到依赖数组 dependencies
