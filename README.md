@@ -27,6 +27,7 @@
 4. @babel/generator -> 生成
 > `generator(ast).code`, 生成数组，code 字段就是代码
 5. parse 函数的作用: 
-> 1. 将 require 变成 __webpack_require__
+> 1. 将 require 变成 `__webpack_require__`
 > 2. 改写依赖的路径，变成 ./src...
 > 3. 得到依赖数组 dependencies
+6. buildModule 递归，最终效果可以在 `this.modules` 看到
