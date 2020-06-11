@@ -31,3 +31,10 @@
 > 2. 改写依赖的路径，变成 ./src...
 > 3. 得到依赖数组 dependencies
 6. buildModule 递归，最终效果可以在 `this.modules` 看到
+
+## P37 生成打包结果
+1. 关于 ejs 的学习
+> 参考：https://www.bilibili.com/video/BV1eJ411M7s6?t=7117  
+> render 的第二个参数是对象，用于传参  
+2. 制作模板 main.ejs, 要注意空格，否则路径不对，就会报错
+3. `emitFile` 重点是路径的处理，这里还没有处理多入口的问题
