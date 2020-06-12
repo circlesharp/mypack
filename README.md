@@ -45,3 +45,8 @@
 3. stylus-loader 主要是使用 `stylue.render` 方法
 4. stylus-loader 的 `css = css.replace(/\n/g, '\\n')` 暂时不知道为啥要这样用
 5. style-loader 的作用在于将创建 style 节点，注意 `JSON.stringify` 的使用，将多行转为单行
+
+## P39 增加plugin
+1. 在实例化 compiler 的时候，增加实例属性 `this.hooks`，里面的字段都是 tapable 的钩子的实例化
+2. plugin 的编写在于提供一个 `apply` 方法，接受 compiler 作为入参，并订阅事件
+3. 有订阅就有发布，发布多数在 Compiler.js 中进行的，也可以在 bin/mypack.js 中发布
