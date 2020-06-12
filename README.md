@@ -38,3 +38,10 @@
 > render 的第二个参数是对象，用于传参  
 2. 制作模板 main.ejs, 要注意空格，否则路径不对，就会报错
 3. `emitFile` 重点是路径的处理，这里还没有处理多入口的问题
+
+## P38 增加loader
+1. getSource 的编写，要遍历 `this.config.module.rules`, 递归实现
+2. loader 的编写(在 rewriteWebpack)，导出 loader 函数，接受 source 源代码
+3. stylus-loader 主要是使用 `stylue.render` 方法
+4. stylus-loader 的 `css = css.replace(/\n/g, '\\n')` 暂时不知道为啥要这样用
+5. style-loader 的作用在于将创建 style 节点，注意 `JSON.stringify` 的使用，将多行转为单行
